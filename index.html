@@ -1,0 +1,507 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Project webpage for a TBME paper on simulation, synthetic data, depth estimation, 3D reconstruction, and localization." />
+  <title>TBME Project Page</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+
+<body>
+  <header class="site-header">
+    <div class="nav-wrap">
+      <a class="brand" href="#top">TBME Project</a>
+
+      <button class="menu-button" aria-label="Toggle navigation" aria-expanded="false">
+        ☰
+      </button>
+
+      <nav class="nav-links">
+        <a href="#overview">Overview</a>
+        <a href="#simulation">Simulation</a>
+        <a href="#synthetic-data">Synthetic Data</a>
+        <a href="#depth">Depth</a>
+        <a href="#reconstruction">3D Reconstruction</a>
+        <a href="#localization">Localization</a>
+        <a href="#citation">Citation</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="top">
+    <!-- =========================================================
+         HERO
+         ========================================================= -->
+    <section class="hero section">
+      <div class="container narrow center">
+        <p class="eyebrow">IEEE Transactions on Biomedical Engineering</p>
+
+        <h1>
+          Your TBME Paper Title Goes Here
+        </h1>
+
+        <p class="authors">
+          Author One<sup>1</sup>, Author Two<sup>2</sup>, Author Three<sup>1</sup>
+        </p>
+
+        <p class="affiliations">
+          <sup>1</sup>Your Institution &nbsp;&nbsp;
+          <sup>2</sup>Collaborating Institution
+        </p>
+
+        <div class="button-row">
+          <a class="button primary" href="#" target="_blank" rel="noopener">Paper</a>
+          <a class="button" href="#" target="_blank" rel="noopener">Supplementary</a>
+          <a class="button" href="#" target="_blank" rel="noopener">Code</a>
+          <!-- <a class="button" href="#" target="_blank" rel="noopener">Dataset</a> -->
+        </div>
+      </div>
+
+      <div class="container">
+        <div class="media-card hero-media">
+          <!-- Replace assets/teaser.mp4 with your overview/demo video -->
+          <video controls muted playsinline preload="metadata" poster="assets/teaser_poster.jpg">
+            <source src="assets/teaser.mp4" type="video/mp4" />
+            Your browser does not support HTML video.
+          </video>
+          <p class="caption">
+            Overview of the proposed pipeline: simulation, multimodal synthetic data generation,
+            depth estimation, 3D reconstruction, and localization.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- =========================================================
+         ABSTRACT + FRAMEWORK
+         ========================================================= -->
+    <section id="overview" class="section section-alt">
+      <div class="container narrow">
+        <h2>Abstract</h2>
+        <p class="abstract">
+          Replace this paragraph with the final abstract of your TBME paper.
+          The abstract can be pasted directly here. For readability, this section
+          uses a narrower text width than the video sections below.
+        </p>
+      </div>
+
+      <div class="container">
+        <div class="section-heading">
+          <p class="eyebrow">Framework</p>
+          <h2>Method Overview</h2>
+          <p>
+            A visual summary of the complete workflow, from simulation and synthetic-data
+            generation to depth perception and downstream geometric applications.
+          </p>
+        </div>
+
+        <div class="pipeline">
+          <div class="pipeline-step">
+            <span>01</span>
+            <strong>Simulation Environment</strong>
+            <p>Interactive ureteroscopy simulation and synchronized data generation.</p>
+          </div>
+          <div class="pipeline-arrow">→</div>
+          <div class="pipeline-step">
+            <span>02</span>
+            <strong>Synthetic Data</strong>
+            <p>RGB, depth, segmentation, optical flow, and multiple scene configurations.</p>
+          </div>
+          <div class="pipeline-arrow">→</div>
+          <div class="pipeline-step">
+            <span>03</span>
+            <strong>Depth Estimation & Novel View Synthesis</strong>
+            <p>Absolute depth prediction and novel view synthesis.</p>
+          </div>
+          <div class="pipeline-arrow">→</div>
+          <div class="pipeline-step">
+            <span>04</span>
+            <strong>3D Reconstruction & Localization</strong>
+            <p>Temporal point-cloud reconstruction and camera localization.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- =========================================================
+         SIMULATION
+         ========================================================= -->
+    <section id="simulation" class="section">
+      <div class="container">
+        <div class="section-heading">
+          <p class="eyebrow">01</p>
+          <h2>Simulation Environment</h2>
+          <p>
+            Present the simulation environment first so readers understand where the synthetic
+            sequences and ground-truth annotations are generated.
+          </p>
+        </div>
+
+        <div class="media-card large">
+          <video controls muted playsinline preload="metadata">
+            <source src="assets/simulator_environment.mp4" type="video/mp4" />
+          </video>
+          <div class="media-copy">
+            <h3>Interactive Simulation Environment</h3>
+            <p>
+              Replace this text with a concise description of the simulator, anatomy,
+              camera/endoscope motion, guidewire or catheter interaction, and any physics or
+              rendering features that are central to the paper.
+            </p>
+          </div>
+        </div>
+
+        <div class="feature-grid">
+          <article class="feature-card">
+            <h3>Flexible Endoscopic Navigation</h3>
+            <p>Describe the controllable endoscopic or catheter motion.</p>
+          </article>
+          <article class="feature-card">
+            <h3>Physical Interaction</h3>
+            <p>Describe contact, deformation, guidewire interaction, or other relevant physics.</p>
+          </article>
+          <article class="feature-card">
+            <h3>Synchronized Ground Truth</h3>
+            <p>Describe the modalities exported at each simulation frame.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- =========================================================
+         SYNTHETIC DATA
+         ========================================================= -->
+    <section id="synthetic-data" class="section section-alt">
+      <div class="container">
+        <div class="section-heading">
+          <p class="eyebrow">02</p>
+          <h2>Synthetic Dataset</h2>
+          <p>
+            Show both synchronized multimodal ground truth and the diversity of scene and
+            rendering configurations used in the dataset.
+          </p>
+        </div>
+
+        <h3 class="subsection-title">Multimodal Ground Truth</h3>
+
+        <div class="video-grid four-col">
+          <div class="media-card">
+            <video class="sync-video" controls muted playsinline preload="metadata">
+              <source src="assets/model_5_2_rgb.mp4" type="video/mp4" />
+            </video>
+            <h4>RGB</h4>
+          </div>
+
+          <div class="media-card">
+            <video class="sync-video" controls muted playsinline preload="metadata">
+              <source src="assets/model_5_2_depth.mp4" type="video/mp4" />
+            </video>
+            <h4>Depth</h4>
+          </div>
+
+          <div class="media-card">
+            <video class="sync-video" controls muted playsinline preload="metadata">
+              <source src="assets/model_5_2_mask.mp4" type="video/mp4" />
+            </video>
+            <h4>Segmentation</h4>
+          </div>
+
+          <div class="media-card">
+            <video class="sync-video" controls muted playsinline preload="metadata">
+              <source src="assets/model_5_2_optical_flow.mp4" type="video/mp4" />
+            </video>
+            <h4>Optical Flow</h4>
+          </div>
+        </div>
+
+        <div class="sync-toolbar">
+          <button id="play-all" class="button small">Play all</button>
+          <button id="pause-all" class="button small">Pause all</button>
+          <button id="restart-all" class="button small">Restart all</button>
+        </div>
+
+        <h3 class="subsection-title top-space">Scene and Appearance Diversity</h3>
+
+        <div class="video-grid two-col">
+          <div class="media-card">
+            <video class="sync-video" controls muted playsinline preload="metadata">
+              <source src="assets/model_4_simple_texture_guidewire.mp4" type="video/mp4" />
+            </video>
+            <div class="media-copy compact">
+              <h4>Simple Texture + Guidewire</h4>
+              <p>Scene variation with the guidewire included.</p>
+            </div>
+          </div>
+
+          <div class="media-card">
+            <video class="sync-video" controls muted playsinline preload="metadata">
+              <source src="assets/model_2_realistic_texture_2_guidewire.mp4" type="video/mp4" />
+            </video>
+            <div class="media-copy compact">
+              <h4>Realistic Texture + Guidewire</h4>
+              <p>More realistic appearance and device interaction.</p>
+            </div>
+          </div>
+
+          <div class="media-card">
+            <video class="sync-video" controls muted playsinline preload="metadata">
+              <source src="assets/model_4_realistic_texture_guidewire_camera_effect.mp4" type="video/mp4" />
+            </video>
+            <div class="media-copy compact">
+              <h4>Realistic Texture + Camera Effects</h4>
+              <p>Vignette, depth of field, field of view,different guidewire appearances.</p>
+            </div>
+          </div>
+
+          <div class="media-card">
+            <video class="sync-video" controls muted playsinline preload="metadata">
+              <source src="assets/model_1_realistic_texture_guidewire_camera_effect_motion_blur.mp4" type="video/mp4" />
+            </video>
+            <div class="media-copy compact">
+              <h4>Realistic Texture + Camera Effects + Motion Blur</h4>
+              <p>Vignette, motion blur, depth of field, field of view,different guidewire appearances.</p>
+            </div>
+          </div>
+
+          <div class="media-card">
+            <video class="sync-video" controls muted playsinline preload="metadata">
+              <source src="assets/bubbles.mp4" type="video/mp4" />
+            </video>
+            <div class="media-copy compact">
+              <h4>Bubbles</h4>
+              <p>Bubbles.</p>
+            </div>
+          </div>
+
+          <div class="media-card">
+            <video class="sync-video" controls muted playsinline preload="metadata">
+              <source src="assets/occlusion.mp4" type="video/mp4" />
+            </video>
+            <div class="media-copy compact">
+              <h4>Obstacles</h4>
+              <p>Obstacles.</p>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- =========================================================
+         DEPTH ESTIMATION
+         ========================================================= -->
+    <section id="depth" class="section">
+      <div class="container">
+        <div class="section-heading">
+          <p class="eyebrow">03</p>
+          <h2>Depth Estimation</h2>
+          <p>
+            Qualitative video demonstration of depth estimation across a continuous
+            endoscopic sequence. Additional comparisons and quantitative results can be
+            added here as they become available.
+          </p>
+        </div>
+
+        <div class="sync-toolbar">
+          <button id="depth-play-all" class="button small">Play all</button>
+          <button id="depth-pause-all" class="button small">Pause all</button>
+          <button id="depth-restart-all" class="button small">Restart all</button>
+        </div>
+
+        <div class="media-card large depth-demo-card">
+          <video class="sync-video" controls muted playsinline preload="metadata">
+            <source src="assets/depth_visualization_1.mp4" type="video/mp4" />
+          </video>
+          <div class="media-copy">
+            <h3>Depth Estimation Demo</h3>
+            <p>
+              Continuous qualitative visualization of the depth-estimation results.
+              This section can later be expanded with ground-truth depth, competing methods,
+              and temporal-consistency comparisons.
+            </p>
+          </div>
+        </div>
+
+        <div class="media-card large depth-demo-card">
+          <video class="sync-video" controls muted playsinline preload="metadata">
+            <source src="assets/depth_visualization_2.mp4" type="video/mp4" />
+          </video>
+          <div class="media-copy">
+            <h3>Depth Estimation Demo</h3>
+            <p>
+              Continuous qualitative visualization of the depth-estimation results.
+              This section can later be expanded with ground-truth depth, competing methods,
+              and temporal-consistency comparisons.
+            </p>
+          </div>
+        </div> 
+      </div>
+    </section>
+
+    <!-- =========================================================
+         Novel View Synthesis
+         ========================================================= -->
+    <section id="depth" class="section">
+      <div class="container">
+        <div class="section-heading">
+          <p class="eyebrow">04</p>
+          <h2>Novel View Synthesis</h2>
+          <p>
+            Novel endoscopic images synthesis under different camera views.
+          </p>
+        </div>
+
+        <div class="media-card large depth-demo-card">
+          <video controls muted playsinline preload="metadata">
+            <source src="assets/Novel_view_3.mp4" type="video/mp4" />
+            Your browser does not support HTML video.
+          </video>
+          <div class="media-copy">
+            <h3>Novel View Synthesis Demo</h3>
+            <p>
+              Continuous qualitative visualization of the synthesis results.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- =========================================================
+         RECONSTRUCTION
+         ========================================================= -->
+    <section id="reconstruction" class="section section-alt">
+      <div class="container">
+        <div class="section-heading">
+          <p class="eyebrow">05</p>
+          <h2>3D Reconstruction</h2>
+          <p>
+            Visualize how estimated metric depth is transformed into 3D structure and accumulated
+            across time.
+          </p>
+        </div>
+
+        <div class="video-grid three-col">
+          <div class="media-card">
+            <video controls muted playsinline preload="metadata">
+              <source src="assets/reconstruction_rgb.mp4" type="video/mp4" />
+            </video>
+            <h4>RGB Sequence</h4>
+          </div>
+
+          <div class="media-card">
+            <video controls muted playsinline preload="metadata">
+              <source src="assets/reconstruction_depth.mp4" type="video/mp4" />
+            </video>
+            <h4>Estimated Depth</h4>
+          </div>
+
+          <div class="media-card">
+            <video controls muted playsinline preload="metadata">
+              <source src="assets/reconstruction_3d.mp4" type="video/mp4" />
+            </video>
+            <h4>Evolving 3D Reconstruction</h4>
+          </div>
+        </div>
+
+        <div class="video-grid two-col top-space">
+          <div class="media-card">
+            <video controls muted playsinline preload="metadata">
+              <source src="assets/reconstruction_gt.mp4" type="video/mp4" />
+            </video>
+            <h4>Ground-Truth Reconstruction</h4>
+          </div>
+
+          <div class="media-card">
+            <video controls muted playsinline preload="metadata">
+              <source src="assets/reconstruction_pred.mp4" type="video/mp4" />
+            </video>
+            <h4>Reconstruction from Predicted Depth</h4>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- =========================================================
+         LOCALIZATION
+         ========================================================= -->
+    <section id="localization" class="section">
+      <div class="container">
+        <div class="section-heading">
+          <p class="eyebrow">06</p>
+          <h2>Camera Localization</h2>
+          <p>
+            Show the temporal camera pose or trajectory together with the reconstructed scene.
+          </p>
+        </div>
+
+        <div class="video-grid two-col">
+          <div class="media-card">
+            <video controls muted playsinline preload="metadata">
+              <source src="assets/localization_rgb.mp4" type="video/mp4" />
+            </video>
+            <h4>Endoscopic Video</h4>
+          </div>
+
+          <div class="media-card">
+            <video controls muted playsinline preload="metadata">
+              <source src="assets/localization_trajectory.mp4" type="video/mp4" />
+            </video>
+            <h4>3D Map + Camera Trajectory</h4>
+          </div>
+        </div>
+
+        <div class="media-card large top-space">
+          <video controls muted playsinline preload="metadata">
+            <source src="assets/end_to_end_demo.mp4" type="video/mp4" />
+          </video>
+          <div class="media-copy">
+            <h3>End-to-End Demonstration</h3>
+            <p>
+              A final integrated result can show RGB input, estimated depth, reconstructed geometry,
+              and localization simultaneously.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- =========================================================
+         CITATION
+         ========================================================= -->
+    <section id="citation" class="section section-dark">
+      <div class="container narrow">
+        <p class="eyebrow">Publication</p>
+        <h2>Citation</h2>
+        <p>
+          If you find this work useful, please consider citing our paper.
+        </p>
+
+        <div class="citation-box">
+<pre><code>@article{yourpaper2026,
+  title   = {Your Paper Title},
+  author  = {Author One and Author Two and Author Three},
+  journal = {IEEE Transactions on Biomedical Engineering},
+  year    = {2026}
+}</code></pre>
+          <button class="copy-button" data-copy-target=".citation-box code">Copy BibTeX</button>
+        </div>
+
+        <div class="footer-links">
+          <a href="#top">Back to top</a>
+          <a href="#" target="_blank" rel="noopener">Paper</a>
+          <a href="#" target="_blank" rel="noopener">Code</a>
+          <a href="#" target="_blank" rel="noopener">Dataset</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container">
+      <p>Project webpage for a TBME paper.</p>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
