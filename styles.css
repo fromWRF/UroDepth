@@ -592,3 +592,38 @@ footer p {
   object-fit: contain;
   max-height: 760px;
 }
+
+.hero-title {
+  font-size: clamp(2rem, 4vw, 3rem);
+  line-height: 1.15;
+}
+
+.hero-media {
+  width: 100%;
+  max-width: 1200px;
+  height: auto;
+  max-height: none;
+  margin: 0 auto;
+  overflow: visible;
+}
+
+.hero-media .hero-image {
+  display: block;
+  width: 100%;
+  height: auto;
+  max-height: none;
+  object-fit: contain;
+}
+
+.hero-media .caption {
+  text-align: center;
+  margin-top: 12px;
+}
+
+/* Spacing between depth estimation video cards */
+#depth .depth-demo-card {
+  margin-bottom: 32px;
+}
+#reconstruction .depth-demo-card {
+  margin-bottom: 32px;
+}

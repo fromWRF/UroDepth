@@ -3,15 +3,15 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Project webpage for a TBME paper on simulation, synthetic data, depth estimation, 3D reconstruction, and localization." />
-  <title>TBME Project Page</title>
+  <meta name="description" content="Project homepage for a manuscript currently under review at TBME, featuring physics-based simulation, synthetic data generation, monocular depth estimation, 3D reconstruction, and endoscope localization." />
+  <title>UroDepth Project Page</title>
   <link rel="stylesheet" href="styles.css" />
 </head>
 
 <body>
   <header class="site-header">
     <div class="nav-wrap">
-      <a class="brand" href="#top">TBME Project</a>
+      <a class="brand" href="#top">UroDepth Project</a>
 
       <button class="menu-button" aria-label="Toggle navigation" aria-expanded="false">
         ☰
@@ -22,9 +22,7 @@
         <a href="#simulation">Simulation</a>
         <a href="#synthetic-data">Synthetic Data</a>
         <a href="#depth">Depth</a>
-        <a href="#reconstruction">3D Reconstruction</a>
-        <a href="#localization">Localization</a>
-        <a href="#citation">Citation</a>
+        <a href="#reconstruction">3D Reconstruction & Localization</a>
       </nav>
     </div>
   </header>
@@ -35,42 +33,41 @@
          ========================================================= -->
     <section class="hero section">
       <div class="container narrow center">
-        <p class="eyebrow">IEEE Transactions on Biomedical Engineering</p>
+        <p class="eyebrow">Under review at IEEE Transactions on Biomedical Engineering</p>
 
-        <h1>
-          Your TBME Paper Title Goes Here
+        <h1 class="hero-title">
+          Real-time Monocular Depth Estimation in Ureteroscopy for Endoscope Reconstruction and Localization
         </h1>
 
         <p class="authors">
-          Author One<sup>1</sup>, Author Two<sup>2</sup>, Author Three<sup>1</sup>
+          Ruofeng Wei<sup>1</sup>, Mariana C. Bernardes<sup>1</sup>, Pedro Moreira<sup>1</sup>, Philip T. Zhao<sup>2</sup>, Rui Li<sup>3</sup>, Junichi Tokuda<sup>1</sup>
         </p>
 
         <p class="affiliations">
-          <sup>1</sup>Your Institution &nbsp;&nbsp;
-          <sup>2</sup>Collaborating Institution
+          <sup>1</sup>Brigham and Women's Hospital, Harvard Medical School &nbsp;&nbsp;
+          <sup>2</sup>NYU Grossman School of Medicine &nbsp;&nbsp;
+          <sup>3</sup>NYU Tandon School of Engineering
         </p>
 
         <div class="button-row">
-          <a class="button primary" href="#" target="_blank" rel="noopener">Paper</a>
-          <a class="button" href="#" target="_blank" rel="noopener">Supplementary</a>
-          <a class="button" href="#" target="_blank" rel="noopener">Code</a>
-          <!-- <a class="button" href="#" target="_blank" rel="noopener">Dataset</a> -->
+          <a class="button primary" href="#" target="_blank" rel="noopener">Paper (after review)</a>
+          <a class="button" href="#" target="_blank" rel="noopener">Supplementary (after review)</a>
+          <a class="button" href="#" target="_blank" rel="noopener">Code (after review)</a>
         </div>
       </div>
 
-      <div class="container">
-        <div class="media-card hero-media">
-          <!-- Replace assets/teaser.mp4 with your overview/demo video -->
-          <video controls muted playsinline preload="metadata" poster="assets/teaser_poster.jpg">
-            <source src="assets/teaser.mp4" type="video/mp4" />
-            Your browser does not support HTML video.
-          </video>
-          <p class="caption">
-            Overview of the proposed pipeline: simulation, multimodal synthetic data generation,
-            depth estimation, 3D reconstruction, and localization.
-          </p>
-        </div>
-      </div>
+    <div class="container">
+      <figure class="media-card hero-media">
+        <img
+          src="assets/Main.png"
+          alt="Overview of the proposed framework"
+          class="hero-image"
+        />
+        <figcaption class="caption">
+          Overview of the monocular image-based depth estimation framework for flexible ureteroscopy.
+        </figcaption>
+      </figure>
+    </div>
     </section>
 
     <!-- =========================================================
@@ -80,48 +77,74 @@
       <div class="container narrow">
         <h2>Abstract</h2>
         <p class="abstract">
-          Replace this paragraph with the final abstract of your TBME paper.
-          The abstract can be pasted directly here. For readability, this section
-          uses a narrower text width than the video sections below.
+        Objective: Ureteroscopy is a minimally invasive procedure for diagnosing and treating urinary tract calculi and tumors. Computer vision-based navigation systems can enhance surgical outcomes by registering the endoscope with pre-operative computed tomography (CT). We propose a monocular depth estimation framework for 3D reconstruction and endoscope localization to facilitate accurate CT registration.
+        Methods: A physics-based simulator was developed for synthetic training data generation, modeling flexible endoscope and ureteral guidewire motion to produce synthetic surgical scenes with realistic textures and geometrically accurate structures. A vision foundation model was fine-tuned using both synthetic and clinical data to improve generalization. To recover the scale from monocular depth estimation without additional sensors, we leveraged the geometric prior of the guidewire and employed a vision-language model (VLM) to track it over time. Geometric constraints were applied to the guidewire region within the depth map to achieve scale recovery.
+        Results: Evaluations on synthetic, phantom, and clinical datasets demonstrated a depth estimation RMSE of 1.64 mm with scale recovery at real-time speeds of 22 fps. 
+        The framework achieved sub-millimeter 3D reconstruction accuracy across all datasets and endoscope localization errors below 0.4 mm on clinical datasets.
+        Conclusion: The proposed framework enables accurate, real-time monocular depth estimation, 3D reconstruction, and endoscope localization in ureteroscopy without additional sensors.
+        Significance: This work advances intraoperative navigation for ureteroscopy by providing a scalable, sensor-free depth estimation solution with millimeter-level accuracy, with broad implications for computer-assisted and robotic endoscopic procedures.
         </p>
       </div>
 
+
       <div class="container">
         <div class="section-heading">
-          <p class="eyebrow">Framework</p>
-          <h2>Method Overview</h2>
+          <p class="eyebrow">Explore</p>
+          <h2>Explore UroDepth</h2>
           <p>
-            A visual summary of the complete workflow, from simulation and synthetic-data
-            generation to depth perception and downstream geometric applications.
+            Explore the key components and results of UroDepth,
+            including physics-based simulation, synthetic data
+            generation, monocular depth estimation, and downstream
+            applications.
           </p>
         </div>
 
         <div class="pipeline">
           <div class="pipeline-step">
             <span>01</span>
-            <strong>Simulation Environment</strong>
-            <p>Interactive ureteroscopy simulation and synchronized data generation.</p>
+            <strong>Physics-Based Simulation</strong>
+            <p>
+              Explore the ureteroscopy simulation environment
+              and its capabilities for realistic scene generation.
+            </p>
           </div>
+
           <div class="pipeline-arrow">→</div>
+
           <div class="pipeline-step">
             <span>02</span>
-            <strong>Synthetic Data</strong>
-            <p>RGB, depth, segmentation, optical flow, and multiple scene configurations.</p>
+            <strong>Synthetic Data Generation</strong>
+            <p>
+              Visualize synthetic endoscopic images and their
+              corresponding depth, segmentation, and optical flow maps.
+            </p>
           </div>
+
           <div class="pipeline-arrow">→</div>
+
           <div class="pipeline-step">
             <span>03</span>
-            <strong>Depth Estimation & Novel View Synthesis</strong>
-            <p>Absolute depth prediction and novel view synthesis.</p>
+            <strong>Depth Estimation</strong>
+            <p>
+              Explore qualitative depth estimation results,
+              ground-truth comparisons, and novel view
+              synthesis.
+            </p>
           </div>
+
           <div class="pipeline-arrow">→</div>
+
           <div class="pipeline-step">
             <span>04</span>
             <strong>3D Reconstruction & Localization</strong>
-            <p>Temporal point-cloud reconstruction and camera localization.</p>
+            <p>
+              View 3D reconstruction results and estimated
+              endoscope trajectories.
+            </p>
           </div>
         </div>
       </div>
+
     </section>
 
     <!-- =========================================================
@@ -133,8 +156,7 @@
           <p class="eyebrow">01</p>
           <h2>Simulation Environment</h2>
           <p>
-            Present the simulation environment first so readers understand where the synthetic
-            sequences and ground-truth annotations are generated.
+          The environment where the synthetic sequences and their ground-truth annotations are generated.
           </p>
         </div>
 
@@ -145,27 +167,11 @@
           <div class="media-copy">
             <h3>Interactive Simulation Environment</h3>
             <p>
-              Replace this text with a concise description of the simulator, anatomy,
-              camera/endoscope motion, guidewire or catheter interaction, and any physics or
-              rendering features that are central to the paper.
+            Ureteroscopy simulation workflow. The simulation consists of two stages: guidewire placement in the ureter, followed by navigation of the flexible ureteroscope, during which endoscopic images and ground-truth depth maps are recorded by the virtual RGB-D camera at the endoscope tip.
             </p>
           </div>
         </div>
 
-        <div class="feature-grid">
-          <article class="feature-card">
-            <h3>Flexible Endoscopic Navigation</h3>
-            <p>Describe the controllable endoscopic or catheter motion.</p>
-          </article>
-          <article class="feature-card">
-            <h3>Physical Interaction</h3>
-            <p>Describe contact, deformation, guidewire interaction, or other relevant physics.</p>
-          </article>
-          <article class="feature-card">
-            <h3>Synchronized Ground Truth</h3>
-            <p>Describe the modalities exported at each simulation frame.</p>
-          </article>
-        </div>
       </div>
     </section>
 
@@ -178,8 +184,7 @@
           <p class="eyebrow">02</p>
           <h2>Synthetic Dataset</h2>
           <p>
-            Show both synchronized multimodal ground truth and the diversity of scene and
-            rendering configurations used in the dataset.
+          Synchronized multimodal ground truth, and the range of scene and rendering configurations used in the dataset.
           </p>
         </div>
 
@@ -230,7 +235,7 @@
             </video>
             <div class="media-copy compact">
               <h4>Simple Texture + Guidewire</h4>
-              <p>Scene variation with the guidewire included.</p>
+              <p>Baseline appearance with the guidewire in view.</p>
             </div>
           </div>
 
@@ -240,7 +245,7 @@
             </video>
             <div class="media-copy compact">
               <h4>Realistic Texture + Guidewire</h4>
-              <p>More realistic appearance and device interaction.</p>
+              <p>More realistic appearance.</p>
             </div>
           </div>
 
@@ -250,7 +255,7 @@
             </video>
             <div class="media-copy compact">
               <h4>Realistic Texture + Camera Effects</h4>
-              <p>Vignette, depth of field, field of view,different guidewire appearances.</p>
+              <p>Vignette, depth of field, field of view, and varied guidewire appearances.</p>
             </div>
           </div>
 
@@ -260,7 +265,7 @@
             </video>
             <div class="media-copy compact">
               <h4>Realistic Texture + Camera Effects + Motion Blur</h4>
-              <p>Vignette, motion blur, depth of field, field of view,different guidewire appearances.</p>
+              <p>Vignette, motion blur, depth of field, field of view, and varied guidewire appearances.</p>
             </div>
           </div>
 
@@ -270,7 +275,7 @@
             </video>
             <div class="media-copy compact">
               <h4>Bubbles</h4>
-              <p>Bubbles.</p>
+              <p>Air bubbles drifting through the irrigation fluid.</p>
             </div>
           </div>
 
@@ -280,7 +285,7 @@
             </video>
             <div class="media-copy compact">
               <h4>Obstacles</h4>
-              <p>Obstacles.</p>
+              <p>Objects partially blocking the view of the lumen.</p>
             </div>
           </div>
         </div>
@@ -293,20 +298,34 @@
          ========================================================= -->
     <section id="depth" class="section">
       <div class="container">
+
         <div class="section-heading">
           <p class="eyebrow">03</p>
           <h2>Depth Estimation</h2>
           <p>
-            Qualitative video demonstration of depth estimation across a continuous
-            endoscopic sequence. Additional comparisons and quantitative results can be
-            added here as they become available.
+            Qualitative evaluation of monocular depth estimation
+            through ground-truth comparisons on synthetic data
+            and novel view synthesis on both synthetic and clinical data.
           </p>
         </div>
 
+        <!-- Depth Estimation Results -->
+        <h3>Depth Estimation Results</h3>
+        <p>
+          Qualitative comparisons of predicted and ground-truth
+          depth maps across continuous synthetic endoscopic sequences.
+        </p>
+
         <div class="sync-toolbar">
-          <button id="depth-play-all" class="button small">Play all</button>
-          <button id="depth-pause-all" class="button small">Pause all</button>
-          <button id="depth-restart-all" class="button small">Restart all</button>
+          <button id="depth-play-all" class="button small">
+            Play all
+          </button>
+          <button id="depth-pause-all" class="button small">
+            Pause all
+          </button>
+          <button id="depth-restart-all" class="button small">
+            Restart all
+          </button>
         </div>
 
         <div class="media-card large depth-demo-card">
@@ -314,11 +333,10 @@
             <source src="assets/depth_visualization_1.mp4" type="video/mp4" />
           </video>
           <div class="media-copy">
-            <h3>Depth Estimation Demo</h3>
+            <h3>Sequence 1</h3>
             <p>
-              Continuous qualitative visualization of the depth-estimation results.
-              This section can later be expanded with ground-truth depth, competing methods,
-              and temporal-consistency comparisons.
+              Input images, ground-truth and predicted depth maps,
+              and their corresponding 3D representations.
             </p>
           </div>
         </div>
@@ -328,27 +346,20 @@
             <source src="assets/depth_visualization_2.mp4" type="video/mp4" />
           </video>
           <div class="media-copy">
-            <h3>Depth Estimation Demo</h3>
+            <h3>Sequence 2</h3>
             <p>
-              Continuous qualitative visualization of the depth-estimation results.
-              This section can later be expanded with ground-truth depth, competing methods,
-              and temporal-consistency comparisons.
+              Input images, ground-truth and predicted depth maps,
+              and their corresponding 3D representations.
             </p>
           </div>
-        </div> 
-      </div>
-    </section>
+        </div>
 
-    <!-- =========================================================
-         Novel View Synthesis
-         ========================================================= -->
-    <section id="depth" class="section">
-      <div class="container">
-        <div class="section-heading">
-          <p class="eyebrow">04</p>
-          <h2>Novel View Synthesis</h2>
+        <!-- Novel View Synthesis -->
+        <div class="section-heading novel-view-heading">
+          <h3>Novel View Synthesis</h3>
           <p>
-            Novel endoscopic images synthesis under different camera views.
+            Qualitative novel view synthesis results on clinical and synthetic
+            endoscopic sequences.
           </p>
         </div>
 
@@ -360,71 +371,59 @@
           <div class="media-copy">
             <h3>Novel View Synthesis Demo</h3>
             <p>
-              Continuous qualitative visualization of the synthesis results.
+              Visualization of synthesized endoscopic views
+              across continuous camera trajectories.
             </p>
           </div>
         </div>
+
       </div>
     </section>
+
     <!-- =========================================================
-         RECONSTRUCTION
+         RECONSTRUCTION and LOCALIZATION
          ========================================================= -->
     <section id="reconstruction" class="section section-alt">
       <div class="container">
         <div class="section-heading">
-          <p class="eyebrow">05</p>
-          <h2>3D Reconstruction</h2>
+          <p class="eyebrow">04</p>
+          <h2>3D Reconstruction & Localization</h2>
           <p>
-            Visualize how estimated metric depth is transformed into 3D structure and accumulated
-            across time.
+          Qualitative visualization of recovered 3D structures and endoscope poses
+          on clinical and synthetic endoscopic sequences.
           </p>
         </div>
 
-        <div class="video-grid three-col">
-          <div class="media-card">
-            <video controls muted playsinline preload="metadata">
-              <source src="assets/reconstruction_rgb.mp4" type="video/mp4" />
-            </video>
-            <h4>RGB Sequence</h4>
-          </div>
-
-          <div class="media-card">
-            <video controls muted playsinline preload="metadata">
-              <source src="assets/reconstruction_depth.mp4" type="video/mp4" />
-            </video>
-            <h4>Estimated Depth</h4>
-          </div>
-
-          <div class="media-card">
-            <video controls muted playsinline preload="metadata">
-              <source src="assets/reconstruction_3d.mp4" type="video/mp4" />
-            </video>
-            <h4>Evolving 3D Reconstruction</h4>
+        <div class="media-card large depth-demo-card">
+          <video class="sync-video" controls muted playsinline preload="metadata">
+            <source src="assets/3D_reconstruction_1.mp4" type="video/mp4" />
+          </video>
+          <div class="media-copy">
+            <h3>Clinical Data</h3>
+            <p>
+            Recovered 3D structure and endoscope poses from clinical endoscopic sequences.
+            </p>
           </div>
         </div>
 
-        <div class="video-grid two-col top-space">
-          <div class="media-card">
-            <video controls muted playsinline preload="metadata">
-              <source src="assets/reconstruction_gt.mp4" type="video/mp4" />
-            </video>
-            <h4>Ground-Truth Reconstruction</h4>
-          </div>
-
-          <div class="media-card">
-            <video controls muted playsinline preload="metadata">
-              <source src="assets/reconstruction_pred.mp4" type="video/mp4" />
-            </video>
-            <h4>Reconstruction from Predicted Depth</h4>
+        <div class="media-card large depth-demo-card">
+          <video class="sync-video" controls muted playsinline preload="metadata">
+            <source src="assets/3D_reconstruction_2.mp4" type="video/mp4" />
+          </video>
+          <div class="media-copy">
+            <h3>Synthetic Data</h3>
+            <p>
+            Recovered 3D structure and endoscope poses from synthetic endoscopic sequences.
+            </p>
           </div>
         </div>
-      </div>
+
     </section>
 
     <!-- =========================================================
          LOCALIZATION
          ========================================================= -->
-    <section id="localization" class="section">
+<!--     <section id="localization" class="section">
       <div class="container">
         <div class="section-heading">
           <p class="eyebrow">06</p>
@@ -463,7 +462,7 @@
           </div>
         </div>
       </div>
-    </section>
+    </section> -->
 
     <!-- =========================================================
          CITATION
@@ -472,25 +471,23 @@
       <div class="container narrow">
         <p class="eyebrow">Publication</p>
         <h2>Citation</h2>
-        <p>
-          If you find this work useful, please consider citing our paper.
+        <p class="citation-note">
+          This paper is currently under review. A BibTeX entry will be posted here after publication.
         </p>
-
+        <!--
+        After acceptance, restore:
         <div class="citation-box">
-<pre><code>@article{yourpaper2026,
-  title   = {Your Paper Title},
-  author  = {Author One and Author Two and Author Three},
+<pre><code>@article{urodepth,
+  title   = {...},
+  author  = {...},
   journal = {IEEE Transactions on Biomedical Engineering},
-  year    = {2026}
+  year    = {...}
 }</code></pre>
           <button class="copy-button" data-copy-target=".citation-box code">Copy BibTeX</button>
         </div>
-
+        -->
         <div class="footer-links">
           <a href="#top">Back to top</a>
-          <a href="#" target="_blank" rel="noopener">Paper</a>
-          <a href="#" target="_blank" rel="noopener">Code</a>
-          <a href="#" target="_blank" rel="noopener">Dataset</a>
         </div>
       </div>
     </section>
@@ -498,7 +495,7 @@
 
   <footer>
     <div class="container">
-      <p>Project webpage for a TBME paper.</p>
+      <p>Project homepage for a paper under review at IEEE TBME.</p>
     </div>
   </footer>
 
